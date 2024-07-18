@@ -1,15 +1,15 @@
-import { DictionaryType } from '../dictionaries/schema';
+import { DictionaryType } from '../dictionaries/type';
 
 /**
  * Object containing functions that import and return dictionaries based on the specified language key.
  */
 const dictionaries: Record<string, () => Promise<DictionaryType>> = {
-	en: () => import('../dictionaries/en.json').then((module) => module.default as DictionaryType),
-	ru: () => import('../dictionaries/ru.json').then((module) => module.default as DictionaryType),
-	de: () => import('../dictionaries/de.json').then((module) => module.default as DictionaryType),
-	it: () => import('../dictionaries/it.json').then((module) => module.default as DictionaryType),
-	fr: () => import('../dictionaries/fr.json').then((module) => module.default as DictionaryType),
-	es: () => import('../dictionaries/es.json').then((module) => module.default as DictionaryType),
+	en: () => import('../dictionaries/en.json').then((module) => module.default),
+	ru: () => import('../dictionaries/ru.json').then((module) => module.default),
+	de: () => import('../dictionaries/de.json').then((module) => module.default),
+	it: () => import('../dictionaries/it.json').then((module) => module.default),
+	fr: () => import('../dictionaries/fr.json').then((module) => module.default),
+	es: () => import('../dictionaries/es.json').then((module) => module.default),
 };
 
 /**

@@ -7,7 +7,10 @@ interface DictionaryLayoutProps {
 	children: React.ReactNode;
 }
 
-export default async function DictionaryLayout({ params, children }: DictionaryLayoutProps) {
+export default async function DictionaryLayout({
+	params,
+	children,
+}: Readonly<DictionaryLayoutProps>) {
 	return (
 		<DictionaryProvider lang={params.lang} initialDictionary={await getDictionary(params.lang)}>
 			{children}
